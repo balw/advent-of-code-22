@@ -17,10 +17,20 @@ const sortElves = (data) => {
     sortedElves.push(elfData)
   });
   getElfWithMostCalories(sortedElves);
+  getTop3Elves(sortedElves);
 }
 
 // Answer 1
 const getElfWithMostCalories = (elves) => {
   const totals = elves.map(elf => elf.total);
   console.log('Answer 1: ', Math.max(...totals));
+}
+
+const getTop3Elves = (elves) => {
+  const totals = elves.map(elf => elf.total);
+  orderedCalories = totals.sort((a, b) => b - a);
+  const top3 = orderedCalories.slice(0, 3);
+
+  const answer2 = top3.reduce((a, b) => a + b, 0);
+  console.log('Answer 2:', answer2);
 }
