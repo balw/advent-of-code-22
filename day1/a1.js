@@ -26,9 +26,10 @@ const getElfWithMostCalories = (elves) => {
   console.log('Answer 1: ', Math.max(...totals));
 }
 
+// Answer 2
 const getTop3Elves = (elves) => {
   const totals = elves.map(elf => elf.total);
-  orderedCalories = totals.sort((a, b) => b - a);
+  const orderedCalories = totals.sort((a, b) => b - a);
   const top3 = orderedCalories.slice(0, 3);
 
   const answer2 = top3.reduce((a, b) => a + b, 0);
